@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value ="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.paul.mybatis.entity" />
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="${jdbc_driver}"/>
+                <property name="url" value="${jdbc_url}"/>
+                <property name="username" value="${jdbc_username}"/>
+                <property name="password" value="${jdbc_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="sqlmapper/TUserMapper.xml"/>
+        <mapper resource="sqlmapper/TRoleMapper.xml"/>
+        <mapper resource="sqlmapper/TJobHistoryMapper.xml"/>
+        <mapper resource="sqlmapper/TPositionMapper.xml"/>
+        <mapper resource="sqlmapper/THealthReportFemaleMapper.xml"/>
+        <mapper resource="sqlmapper/THealthReportMaleMapper.xml"/>
+
+    </mappers>
+
+</configuration>
+
+
