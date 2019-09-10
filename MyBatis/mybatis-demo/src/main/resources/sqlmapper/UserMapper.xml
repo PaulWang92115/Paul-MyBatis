@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.paul.mybatis.mapper.TUserMapper">
+<mapper namespace="com.paul.mybatis.mapper.UserMapper">
 
-    <select id="selectByPrimaryKey" resultType="TUser">
+    <select id="selectByPrimaryKey" resultType="User">
         select *
         from t_user
-        where id = #{id,jdbcType=INTEGER}
+        where userId = #{userId}
     </select>
 
-    <select id="selectAll" resultType="TUser">
+    <select id="selectAll" resultType="User">
         select *
         from t_user
     </select>

@@ -1,8 +1,7 @@
 package com.paul.mybatis;
 
-import com.paul.mybatis.entity.TUser;
-import com.paul.mybatis.mapper.TUserMapper;
-import jdk.internal.util.xml.impl.Input;
+import com.paul.mybatis.entity.User;
+import com.paul.mybatis.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,7 +10,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class MybatisDemo {
@@ -30,16 +28,16 @@ public class MybatisDemo {
         //获取 sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
         //获取对应 mapper
-        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
 
         //-------------第三阶段-------------------
         //执行查询语句并返回单条数据
-        TUser user = mapper.selectByPrimaryKey(1);
+        User user = mapper.selectByPrimaryKey(121312312312L);
         System.out.println(user);
 
         //执行查询语句并返回多条数据
-        List<TUser> users = mapper.selectAll();
+        List<User> users = mapper.selectAll();
 
     }
 }

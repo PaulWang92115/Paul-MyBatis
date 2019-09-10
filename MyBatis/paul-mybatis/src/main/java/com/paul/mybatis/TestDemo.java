@@ -1,9 +1,9 @@
 package com.paul.mybatis;
 
-import com.paul.mybatis.entity.TUser;
+import com.paul.mybatis.entity.User;
 import com.paul.mybatis.factory.DefaultSqlSessionFactory;
 import com.paul.mybatis.factory.SqlSessionFactory;
-import com.paul.mybatis.mapper.TUserMapper;
+import com.paul.mybatis.mapper.UserMapper;
 import com.paul.mybatis.sqlsession.SqlSession;
 
 public class TestDemo {
@@ -13,9 +13,9 @@ public class TestDemo {
 
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-        TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        TUser user = mapper.selectByPrimaryKey(1);
+        User user = mapper.selectByPrimaryKey(11221312321L);
 
         System.out.println(user.toString());
     }

@@ -27,12 +27,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="sqlmapper/TUserMapper.xml"/>
-        <mapper resource="sqlmapper/TRoleMapper.xml"/>
-        <mapper resource="sqlmapper/TJobHistoryMapper.xml"/>
-        <mapper resource="sqlmapper/TPositionMapper.xml"/>
-        <mapper resource="sqlmapper/THealthReportFemaleMapper.xml"/>
-        <mapper resource="sqlmapper/THealthReportMaleMapper.xml"/>
+        <mapper resource="sqlmapper/UserMapper.xml"/>
 
     </mappers>
 
