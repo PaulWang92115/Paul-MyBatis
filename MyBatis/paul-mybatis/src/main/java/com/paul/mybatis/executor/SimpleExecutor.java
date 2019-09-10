@@ -34,7 +34,10 @@ public class SimpleExecutor implements Executor {
         ResultSet resultSet = null;
         try {
             connection = DriverManager.getConnection(configuration.getJdbcUrl(), configuration.getJdbcUsername(), configuration.getJdbcPassword());
-            preparedStatement = connection.prepareStatement(ms.getSql());
+            String regex = "#\\{([^}])*\\}";
+            // 将 sql 语句中的 #{userId} 替换为 ？
+            String  sql = ms.getSql().replaceAll(regex,"");
+            preparedStatement = connection.prepareStatement(sql);
             //处理占位符
             parametersize(preparedStatement, parameter);
             resultSet = preparedStatement.executeQuery();
