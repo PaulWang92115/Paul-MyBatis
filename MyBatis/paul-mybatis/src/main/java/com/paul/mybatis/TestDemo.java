@@ -15,7 +15,7 @@ public class TestDemo {
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        User user = mapper.selectByPrimaryKey(11221312321L);
+        User user = mapper.selectByPrimaryKey(1L);
 
         System.out.println(user.toString());
     }
